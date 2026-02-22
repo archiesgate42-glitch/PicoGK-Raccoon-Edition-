@@ -1,7 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\rtt\PicoGK-Main\PicoGK.csproj" />
+    <ProjectReference Include="..\..\PicoGK-Main\PicoGK.csproj" />
+  </ItemGroup>
+
+  <!-- Copy Linux native PicoGK runtime to output so the app can load libpicogk.1.7.so -->
+  <ItemGroup Condition="Exists('native/linux-x64/libpicogk.1.7.so')">
+    <None Include="native/linux-x64/libpicogk.1.7.so" Link="libpicogk.1.7.so" CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
 
   <PropertyGroup>

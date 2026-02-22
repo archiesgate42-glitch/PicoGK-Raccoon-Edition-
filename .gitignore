@@ -1,6 +1,11 @@
+# Build & IDE
 bin/
 obj/
 .vscode/
+
+# Test exports & voxel caches (lokaal houden, niet naar GitHub)
 *.stl
+*.obj
+*.vdb
 *.log
 
